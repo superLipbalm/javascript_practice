@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #ecf0f1;
+  background-color: #192430; }
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  @media screen and (max-width: 786px) {
+    .container {
+      width: 100vw; } }
+  @media screen and (min-width: 786px) {
+    .container {
+      width: 340px; } }
+  .container header {
+    display: flex;
+    justify-content: center; }
+    .container header label {
+      margin-right: 5px;
+      font-size: 18px;
+      font-weight: 400; }
+    .container header select {
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 6px; }
+
+.legend {
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #2c3e50;
+  border-radius: 5px; }
+
+.seat {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #7f8c8d;
+  cursor: pointer; }
+  .seat:not(.seat.occupied):hover {
+    transform: scale(1.3); }
+
+.selected {
+  background-color: #65b9f1; }
+
+.occupied {
+  background-color: #bdc3c7;
+  cursor: unset; }
+
+.seat-select-screen {
+  margin-top: 20px; }
+  .seat-select-screen::before {
+    content: '';
+    display: block;
+    width: 190px;
+    height: 70px;
+    margin: 0 auto;
+    box-shadow: 0px 2px 10px 3px white;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(-30deg);
+    background-color: #ecf0f1;
+    margin-bottom: 20px; }
+  .seat-select-screen .row {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; }
+    .seat-select-screen .row .seat {
+      margin-right: 5px; }
+      .seat-select-screen .row .seat:nth-child(4n+2) {
+        margin-right: 20px; }
+
+.summary {
+  margin-top: 20px;
+  text-align: center; }
+  .summary span {
+    color: #65b9f1; }

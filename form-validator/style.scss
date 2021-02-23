@@ -1,0 +1,98 @@
+$successColor: #2ecc71;
+$errorColor: #e74c3c;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 400px;
+    height: 600px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+
+    form {
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: none;
+            @include flexColumn();
+            margin: 0 auto;
+            li {
+                @include flexColumn();
+                margin-bottom: 10px;
+                & :not(:last-child) {
+                    margin-bottom: 5px;
+                }
+                
+                input {
+                    padding: 8px 5px;
+                    border: 1px solid lightgrey;
+                    border-radius: 5px;
+
+                    &:focus {
+                        outline: 0;
+                        border-color: #777;
+                    }
+                }
+
+                &.success input {
+                    border-width: 2px;
+                    border-color: $successColor;
+                }
+
+                &.error input {
+                    border-width: 2px;
+                    border-color: $errorColor;
+                }
+
+                small {
+                    color: $errorColor;
+                    visibility: hidden;
+                }
+
+                &.error small {
+                    visibility: visible;
+                }
+            }
+        }
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            font: {
+                size: 20px;
+                weight: 500;
+            }
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            padding: 8px;
+        }
+    }
+}
+

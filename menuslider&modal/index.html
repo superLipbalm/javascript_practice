@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Menuslider And Modal</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="user" />
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <button id="toggle" class="toggle">
+        <i class="fa fa-bars fa-2x"></i>
+      </button>
+
+      <h1>메뉴슬라이더와 모달</h1>
+      <p>
+        유저 이미지는 랜덤유저api에서 가져왔습니다. 메뉴슬라이더와 모달을 만드는
+        것을 익히기 위한 연습페이지입니다.
+      </p>
+
+      <button class="modal-btn" id="open">Sign Up</button>
+    </header>
+
+    <div class="container">
+      <h2>파괴의 군주가 돌아왔습니다</h2>
+      <p>
+        디아블로® II: 레저렉션™은 디아블로 II와 확장팩인 디아블로® II: 파괴의
+        군주의 콘텐츠를 포함하고 있습니다. 얼음에 뒤덮인 동굴, 언데드 괴물로
+        가득한 오싹한 묘지, 얼어붙은 불모지를 탐험하며 적을 물리치고 아리앗 산을
+        찾아가 파괴의 군주, 바알을 저지하십시오. 파괴의 군주에서 덫과 그림자
+        단련의 장인인 영리한 암살자와 변신의 귀재이자 소환사로써 원초적 마법의
+        힘을 부리는 야성의 드루이드로 지옥의 문을 여십시오.
+      </p>
+      <p>
+        무시무시한 악마, 용감한 모험가 그리고 성역의 세계 모두 부활했습니다. 이
+        세계의 구성원을 4K UHD(2160p)까지 지원하는 리마스터된 그래픽을 PC에서
+        만나보십시오. 레거시 모드 설정으로 고전 느낌 그대로의 오리지널 디아블로
+        II를 즐기실 수도 있습니다.
+      </p>
+
+      <h2>고전 명작 게임이 부활했습니다</h2>
+      <ul>
+        <li>
+          괴물, 영웅, 아이템, 주문 모두 리마스터된 그래픽으로 재탄생합니다.
+        </li>
+        <li>각기 다른 다섯 개의 막에서 위대한 서사가 펼쳐집니다.</li>
+        <li>
+          클래식 게임플레이 - 당신이 기억하고 사랑했던 디아블로 II의 모습 그대로
+          돌아옵니다.
+        </li>
+        <li>Battle.net 고객지원이 업데이트되었습니다.</li>
+        <li>
+          플랫폼간 진척도 공유가 지원될 예정이며, 언제 어디서든 게임플레이를
+          즐겨보세요.
+        </li>
+        <li>더 많은 콘텐츠들이 기다리고 있습니다.</li>
+      </ul>
+
+      <p>
+        플레이어는 험하고 어둡고 가차없는 세계, 성역으로 돌아가게 됩니다.
+        디아블로 III의 사건으로부터 오랜 세월이 지난 후를 배경으로 하는 디아블로
+        IV는 모험가들에게 끝없는 악마의 무리를 선사합니다. 거대한 악이 다시
+        모습을 드러내고, 그녀의 귀환과 함께 성역은 또다시 암울하고 절망적인 곳이
+        되었습니다. 충격적인 상상력을 보여주는 디아블로 IV는 맹렬한 전투, 특성,
+        기술 포인트, 룬 등을 통한 깊이 있고 다양한 캐릭터 성장, 전설 전리품을
+        찾아 헤매는 과정 등, 대표적인 액션 RPG 시리즈의 특징을 고스란히 지니고
+        있습니다.
+      </p>
+    </div>
+    <!-- Modal -->
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <button type="button" class="close-btn" id="close">X</button>
+        <h2 class="modal-header">회원가입</h2>
+        <p>회원가입 모달모달</p>
+        <form class="modal-form">
+          <div>
+            <label for="name">이름</label>
+            <input type="text" id="name" placeholder="이름을 입력하세요" />
+          </div>
+          <div>
+            <label for="email">이메일</label>
+            <input type="email" id="email" placeholder="이메일을 입력하세요" />
+          </div>
+          <div>
+            <label for="password">비밀번호</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력하세요"
+            />
+          </div>
+          <div>
+            <label for="confirmPassword">비밀번호 확인</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="비밀번호를 똑같이 입력하세요"
+            />
+          </div>
+          <div>
+            <input type="submit" value="submit" class="submit-btn" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="menusliderAndModal.js"></script>
+  </body>
+</html>

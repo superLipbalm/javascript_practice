@@ -8,6 +8,7 @@ const totalIncome = document.getElementById('total-income'),
 
 let transactions = [];
 
+//Add trasaction to DOM
 function addTransactionDOM(transaction) {
   const sign = transaction.amount < 0 ? '-' : '+';
 
@@ -23,12 +24,7 @@ function addTransactionDOM(transaction) {
   list.appendChild(item);
 }
 
-function removeTransaction(id) {
-  transactions = transactions.filter((transaction) => transaction.id !== id);
-
-  init();
-}
-
+//Add tranasaction
 function addTransaction(event) {
   event.preventDefault();
   if (text.value !== '' && amount !== '') {
@@ -40,6 +36,8 @@ function addTransaction(event) {
 
     updateSummary();
 
+    updateLocalStorage();
+
     text.value = '';
     amount.value = '';
   } else {
@@ -47,13 +45,16 @@ function addTransaction(event) {
   }
 }
 
-function init() {
-  list.innerHTML = '';
+//Remove transaction
+function removeTransaction(id) {
+  transactions = transactions.filter((transaction) => transaction.id !== id);
 
-  transactions.forEach(addTransactionDOM);
-  updateSummary();
+  updateLocalStorage();
+
+  init();
 }
 
+//Update summary
 function updateSummary() {
   const amounts = transactions.map((item) => item.amount);
   const total = amounts.reduce((acc, item) => (acc += +item), 0);
@@ -64,6 +65,26 @@ function updateSummary() {
   totalExpense.innerHTML = `-₩${Math.abs(expense)}`;
   balance.innerHTML = `₩${total}`;
 }
+
+function updateLocalStorage() {
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+}
+
+function loadLocalStorage() {
+  if (localStorage.getItem('transactions') !== null) {
+    transactions = JSON.parse(localStorage.getItem('transactions'));
+  }
+}
+
+//Initialize
+function init() {
+  list.innerHTML = '';
+
+  transactions.forEach(addTransactionDOM);
+  updateSummary();
+}
+
+loadLocalStorage();
 
 form.addEventListener('submit', addTransaction);
 

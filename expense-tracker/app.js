@@ -66,10 +66,12 @@ function updateSummary() {
   balance.innerHTML = `₩${total}`;
 }
 
+//Update localstorage
 function updateLocalStorage() {
   localStorage.setItem('transactions', JSON.stringify(transactions));
 }
 
+//Load localstorage
 function loadLocalStorage() {
   if (localStorage.getItem('transactions') !== null) {
     transactions = JSON.parse(localStorage.getItem('transactions'));

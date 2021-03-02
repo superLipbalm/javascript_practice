@@ -1,0 +1,162 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  background-color: #ffdddd;
+  min-height: 100vh;
+}
+
+body header {
+  margin: auto;
+  padding: 20px;
+}
+
+body header h1 {
+  color: #000;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  background-color: darksalmon;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.btn:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.btn-toggle {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.btn:focus,
+select:focus {
+  outline: 0;
+}
+
+.textbox {
+  width: 70%;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.textbox.show {
+  top: 30%;
+}
+
+.textbox select {
+  background-color: darksalmon;
+  border: 0;
+  color: #fff;
+  font-size: 12px;
+  height: 30px;
+  width: 100%;
+}
+
+.textbox textarea {
+  border: 1px #dadada solid;
+  font-size: 16px;
+  padding: 8px;
+  margin: 15px 0;
+  width: 100%;
+  height: 150px;
+}
+
+.textbox .btn-read {
+  width: 100%;
+}
+
+.textbox .close-btn {
+  float: right;
+  text-align: center;
+  background-color: inherit;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-out;
+  transition: -webkit-box-shadow 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out;
+  transition: box-shadow 0.2s ease-out, -webkit-box-shadow 0.2s ease-out;
+}
+
+.box:active, .box.active {
+  -webkit-box-shadow: 0 0 10px 5px darksalmon;
+          box-shadow: 0 0 10px 5px darksalmon;
+}
+
+.box img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.box p {
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: darksalmon;
+}
+
+@media (max-width: 1100px) {
+  main {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  main {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}

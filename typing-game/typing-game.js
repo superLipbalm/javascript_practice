@@ -10,7 +10,7 @@ const summary = document.getElementById('summary-container');
 let time = 10;
 let score = 0;
 let randomWord;
-let words = [0];
+const words = [];
 let difficulty =
   localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'medium';
 
@@ -18,9 +18,13 @@ const timeInterval = setInterval(updateTime, 1000);
 
 // Fetch words from API
 async function getWords() {
-  words = await fetch('https://random-word-api.herokuapp.com/word?number=100').then((res) =>
+  const temp = await fetch('https://random-word-api.herokuapp.com/word?number=100').then((res) =>
     res.json()
   );
+
+  temp.forEach((word) => {
+    words.push(word);
+  });
 
   addWordToDOM();
   text.focus();
